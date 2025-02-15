@@ -8,18 +8,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* remove the fades at top and bottom of screen */
-.background-gallery-active header:before, .background-gallery-active header:after {
-    opacity:0;
-}
-
-.text-white section, .text-white section.list * {
-    color:white;
-}
-.text-white h1 {
-    opacity: 0;
-}
-
 body, html {
     height: 100%;
 }
@@ -479,10 +467,6 @@ section.list ul .separator .month {
     z-index: 1;
 }
 
-/* when hover list item with background gallery */
-.background-gallery-active section.list ul .separator .month {
-    background-color: rgba(255,255,255,0);
-}
 
 section.list ul .separator .month:after {
     content: '';
@@ -493,10 +477,6 @@ section.list ul .separator .month:after {
     left: 100%;
     background-color: white;
     transition: all 0.2s ease;
-}
-/* when hover list item with background gallery */
-.background-gallery-active section.list ul .separator .month:after {
-        background-color: rgba(255,255,255,0);
 }
 
 section.list ul li {
@@ -523,10 +503,7 @@ section.list ul li:before {
     z-index: 1;
     transition: all 0.2s linear;
 }
-/* remove it when the background gallery is on */
-.background-gallery-active section.list ul li:before {
-    opacity: 0;
-}
+
 
 section.list ul li:hover, section.list ul li:active {
     opacity: 1;
@@ -564,8 +541,9 @@ section.list ul li a .title:has(p) {
    }
 }
 section.list ul li a .title h4 {
+    /* used to be 48 */
     max-width: calc(100% - 48px);
-    background-color: #fff;
+    width: auto;
     /* height: 40px; */
     /* inline block lets the line in :before be shown */
     display: inline-block;
@@ -576,10 +554,14 @@ section.list ul li a .title h4 {
     /* float: left; */
     /* padding-bottom: 12px; */
 }
-/* when hover list item with background gallery */
-.background-gallery-active section.list ul li a .title h4 {
-        background-color: rgba(255,255,255,0);
+section.list ul li a .title h4 span {
+    background-color: #fff;
+    padding-right: 2px;
 }
+section.list ul li a .title h4 span:last-of-type {
+    padding-right: 8px;
+}
+
 
 section.list ul li a .title p {
     max-width: calc(100% - 48px);
@@ -631,10 +613,7 @@ section.list ul li a .date:after {
     z-index: 1;
     transition: all 0.2s linear;
 }
-/* when hover list item with background gallery */
-.background-gallery-active section.list ul li a .date:after {
-    background-color: rgba(255,255,255,0);
-}
+
 
 section.list ul li a .date span {
     position: relative;
@@ -662,10 +641,7 @@ section.list ul li a:after {
     opacity: 0;
     transition: all 0.15s ease;
 }
-/* when hover list item with background gallery */
-.background-gallery-active section.list ul li a:after{
-        background-color: rgba(255,255,255,0);
-}
+
 @media screen and (max-width: 767px) {
     section.list ul li a:after {
         display: none;
