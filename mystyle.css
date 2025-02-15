@@ -1,0 +1,792 @@
+body {
+    margin: 0;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0.1s;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* remove the fades at top and bottom of screen */
+.background-gallery-active header:before, .background-gallery-active header:after {
+    opacity:0;
+}
+
+.text-white section, .text-white section.list * {
+    color:white;
+}
+.text-white h1 {
+    opacity: 0;
+}
+
+body, html {
+    height: 100%;
+}
+::-moz-selection {
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background-color: #000;
+    color: #fff;
+    text-shadow: none;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+a:focus, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+a img {
+    border: 0;
+}
+p {
+    margin: 0;
+}
+img, svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    height: 50px;
+    padding: 2px 15px 5px 15px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #f5f5f6;
+    box-sizing: border-box;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #f5f5f6 inset !important;
+    -webkit-text-fill-color: #000000;
+}
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+}
+@font-face {
+    font-family: hkgrotesk;
+    font-weight: normal;
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-light.eot");
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-light.eot?") format("eot"), url("assets/fonts/hkgrotesk/hkgrotesk-light.woff") format("woff"), url("assets/fonts/hkgrotesk/hkgrotesk-light.ttf") format("truetype"), url("assets/fonts/hkgrotesk/hkgrotesk-light.svg#svg") format("svg");
+}
+@font-face {
+    font-family: hkgrotesk;
+    font-weight: medium;
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-regular.eot");
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-regular.eot?") format("eot"), url("assets/fonts/hkgrotesk/hkgrotesk-regular.woff") format("woff"), url("assets/fonts/hkgrotesk/hkgrotesk-regular.ttf") format("truetype"), url("assets/fonts/hkgrotesk/hkgrotesk-regular.svg#svg") format("svg");
+}
+@font-face {
+    font-family: hkgrotesk;
+    font-weight: bold;
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-medium.eot");
+    src: url("assets/fonts/hkgrotesk/hkgrotesk-medium.eot?") format("eot"), url("assets/fonts/hkgrotesk/hkgrotesk-medium.woff") format("woff"), url("assets/fonts/hkgrotesk/hkgrotesk-medium.ttf") format("truetype"), url("assets/fonts/hkgrotesk/hkgrotesk-medium.svg#svg") format("svg");
+}
+body, input, button {
+    color: #000000;
+    word-wrap: break-word;
+    font-family: 'hkgrotesk', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+}
+@media screen and (max-width: 767px) {
+    body, input, button {
+        font-size: 15px;
+   }
+}
+h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 140%;
+    font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 24px;
+   }
+}
+h2 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 140%;
+    font-weight: normal;
+}
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 30px;
+   }
+}
+h3 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 140%;
+    font-weight: normal;
+}
+@media screen and (max-width: 767px) {
+    h3 {
+        font-size: 15px;
+   }
+}
+h4 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 140%;
+    font-weight: normal;
+}
+@media screen and (max-width: 767px) {
+    h4 {
+        font-size: 15px;
+   }
+}
+b, strong {
+    font-weight: normal;
+}
+button, .button {
+    font-family: soleil, sans-serif;
+    font-family: 'hkgrotesk', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    background-color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 0;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+    button, .button {
+        font-size: 15px;
+   }
+}
+header:before {
+    content: '';
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+header:after {
+    content: '';
+    width: 100%;
+    height: 160px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+header .menu {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    display: flex;
+    z-index: 8;
+    padding: 0 5px 0 15px;
+}
+@media screen and (max-width: 767px) {
+    header .menu {
+        bottom: 20px;
+   }
+}
+header .menu:before {
+    content: '';
+    width: calc(100% + 200px);
+    height: calc(100% + 65px);
+    position: absolute;
+    top: -15px;
+    left: -100px;
+}
+header .menu .source {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    height: 100%;
+    padding: 8px 20px 10px 20px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all 0.15s ease;
+}
+header .menu .source span {
+    white-space: nowrap;
+}
+header .menu .filter {
+    display: flex;
+    transition: all 0.15s ease;
+}
+header .menu .filter li {
+    display: flex;
+    padding: 8px 10px 12px 10px;
+    transition: all 0.15s ease;
+    position: relative;
+    cursor: pointer;
+}
+header .menu .filter li span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    left: -4px;
+    opacity: 0;
+    -webkit-transform: scale(0) translateX(10px);
+    transform: scale(0) translateX(10px);
+    transition: all 0.15s ease;
+}
+header .menu .filter li.all span {
+    -webkit-animation: background 26s infinite;
+    animation: background 26s infinite;
+    transition: background 0.2s linear;
+}
+@-webkit-keyframes background {
+    0% {
+        color: #7DADFF;
+        background-color: #7DADFF;
+   }
+    14% {
+        color: #F8EA6E;
+        background-color: #F8EA6E;
+   }
+    28% {
+        color: #F9805A;
+        background-color: #F9805A;
+   }
+    42% {
+        color: #12AE51;
+        background-color: #12AE51;
+   }
+    60% {
+        color: #607D8B;
+        background-color: #607D8B;
+   }
+    74% {
+        color: #F44336;
+        background-color: #F44336;
+   }
+    100% {
+        color: #7DADFF;
+        background-color: #7DADFF;
+   }
+}
+header .menu .filter li.active {
+    margin-left: 12px;
+}
+header .menu .filter li.active span {
+    opacity: 1;
+    -webkit-transform: scale(1) translateX(0);
+    transform: scale(1) translateX(0);
+}
+header .menu .filter:hover li:not(:hover) {
+    opacity: 0.5;
+}
+header .menu .filter:hover li:not(:hover) span {
+    background-color: #D8D8D8 !important;
+}
+header .menu .dark-light {
+    width: 20px;
+    height: 20px;
+    padding: 11px 10px 11px 8px;
+    cursor: pointer;
+    display: none;
+}
+header .menu .dark-light:hover {
+    opacity: 0.5;
+}
+header .menu .arrow {
+    width: 12px;
+    height: 12px;
+    padding: 10px 0 11px 0;
+    cursor: pointer;
+    z-index: 3;
+    -webkit-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    opacity: 0;
+    transition: all 0.15s ease;
+}
+header .menu .arrow svg {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -webkit-backface-visibility: hidden;
+    transition: all 0.15s ease;
+}
+header .menu.arrow-hover .filter {
+    opacity: 0.5;
+}
+header .menu.highlight .arrow {
+    padding: 10px 15px 11px 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+header .menu.highlight .arrow svg {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+header .menu.highlight .filter {
+    opacity: 0;
+}
+header .menu.highlight .source {
+    opacity: 1;
+    visibility: visible;
+}
+header .menu.scroll .arrow {
+    padding: 10px 15px 11px 10px;
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+}
+section.error-404 {
+    min-height: 100vh;
+    margin-bottom: -140px;
+}
+section.error-404 h1 {
+    text-align: center;
+    margin-top: 60px;
+}
+section.error-404 span {
+    font-size: 400px;
+    line-height: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #f5f5f6;
+}
+
+
+/* CONTENT */
+section.content {
+    max-width: 560px;
+    margin: 25vh auto 20px auto;
+    padding: 0 30px;
+}
+@media screen and (max-width: 767px) {
+    section.content {
+        margin: 40px auto 20px auto;
+   }
+}
+section.content h1, section.content h2, section.content h3 {
+    margin-bottom: 10px;
+}
+section.content p {
+    margin-bottom: 10px;
+}
+section.content a {
+    text-decoration: underline;
+}
+section.list {
+    max-width: 560px;
+    margin: 40px auto 0 auto;
+    padding: 0 25px;
+    transition: all 0.5s ease;
+}
+section.list.hide {
+    opacity: 0;
+}
+section.list ul {
+    padding-right: 40px;
+    list-style: none;
+    transition: all 0.2s linear;
+}
+section.list ul:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+section.list ul .separator {
+    width: 100%;
+    height: 0;
+    display: block;
+    float: left;
+    position: relative;
+}
+section.list ul .separator .year {
+    width: 54px;
+    height: 58px;
+    position: relative;
+    top: 8px;
+    left: calc(100% + 45px);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+}
+section.list ul .separator .title {
+    width: auto;
+    height: 58px;
+    position: relative;
+    top: 8px;
+    left: calc(100% + 45px);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+}
+section.list ul .separator .month {
+    position: relative;
+    left: calc(100% + 45px);
+    padding: 0 10px 0 4px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-color: white;
+    transition: all 0.2s ease;
+    z-index: 1;
+}
+
+/* when hover list item with background gallery */
+.background-gallery-active section.list ul .separator .month {
+    background-color: rgba(255,255,255,0);
+}
+
+section.list ul .separator .month:after {
+    content: '';
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 100%;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+/* when hover list item with background gallery */
+.background-gallery-active section.list ul .separator .month:after {
+        background-color: rgba(255,255,255,0);
+}
+
+section.list ul li {
+    width: 100%;
+    position: relative;
+    transition: all 0.2s linear;
+}
+section.list ul li.hidden {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* the grey line connecting to the date */
+section.list ul li:before {
+    content: '';
+    width: calc(100% - 20px);
+    height: 1px;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.1;
+    top: 14px;
+    left: 20px;
+    z-index: 1;
+    transition: all 0.2s linear;
+}
+/* remove it when the background gallery is on */
+.background-gallery-active section.list ul li:before {
+    opacity: 0;
+}
+
+section.list ul li:hover, section.list ul li:active {
+    opacity: 1;
+}
+section.list ul li a {
+    width: calc(100% - 18px);
+    display: block;
+    position: relative;
+    padding: 2px 0 2px 18px;
+    overflow: hidden;
+    z-index: 4;
+}
+section.list ul li a .title {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding-right: 3px;
+    transition: all 0.3s linear, opacity 0.2s linear; 
+
+    /* add this so i can remove float:left from section.list ul li a .title h4 without affecting the height */
+    overflow: auto; 
+
+    padding-bottom: 12px;
+}
+
+/* with a subtitle the padding looks too spaced */
+section.list ul li a .title:has(p) {
+    padding-bottom: 0px;
+}
+
+/* TODO: check if I should eralse this */
+@media screen and (max-width: 767px) {
+    section.list ul li a .title {
+        overflow: scroll;
+   }
+}
+section.list ul li a .title h4 {
+    max-width: calc(100% - 48px);
+    background-color: #fff;
+    /* height: 40px; */
+    /* inline block lets the line in :before be shown */
+    display: inline-block;
+    position: relative;
+    padding-right: 8px;
+    /* white-space: nowrap; */
+    z-index: 3;
+    /* float: left; */
+    /* padding-bottom: 12px; */
+}
+/* when hover list item with background gallery */
+.background-gallery-active section.list ul li a .title h4 {
+        background-color: rgba(255,255,255,0);
+}
+
+section.list ul li a .title p {
+    max-width: calc(100% - 48px);
+    opacity: 0.2;
+    /* padding-bottom: -12px; */
+}
+
+/* TODO: check these media */
+/* @media screen and (max-width: 767px) {
+    section.list ul li a .title h4 {
+        height: 32px; 
+   }
+} */
+/* TODO: readd that if theres no p maybe? */
+@media screen and (max-width: 767px) {
+    section.list ul li a .title h4.overflow {
+        padding-right: 200px;
+   }
+}
+
+/* the dots to the left of the stuff */
+section.list ul li a .category {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: all 0.15s ease;
+}
+/* the dates to the right of the list items */
+section.list ul li a .date {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    z-index: 4;
+    transition: all 0.15s linear, opacity 0.2s linear;
+}
+
+/* so the line doesnt appear behind the number */
+section.list ul li a .date:after {
+    content: '';
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: -8px;
+    z-index: 1;
+    transition: all 0.2s linear;
+}
+/* when hover list item with background gallery */
+.background-gallery-active section.list ul li a .date:after {
+    background-color: rgba(255,255,255,0);
+}
+
+section.list ul li a .date span {
+    position: relative;
+    opacity: 0.2;
+    z-index: 2;
+}
+/* TODO: what does this do */
+section.list ul li a:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: -12px;
+    background-image: url("assets/arrow.svg");
+    background-position: center;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    background-size: 12px;
+    background-color: white;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-left: 8px;
+    z-index: 4;
+    opacity: 0;
+    transition: all 0.15s ease;
+}
+/* when hover list item with background gallery */
+.background-gallery-active section.list ul li a:after{
+        background-color: rgba(255,255,255,0);
+}
+@media screen and (max-width: 767px) {
+    section.list ul li a:after {
+        display: none;
+   }
+}
+section.list ul li a:hover, section.list ul li a:active {
+    border: 0;
+    color: #000 !important;
+}
+/* section.list ul li a:visited {
+    opacity: 0.3;
+}
+section.list ul li.hide {
+    opacity: 0.5;
+} */
+section.list ul:hover .separator h3 {
+    color: rgba(0, 0, 0, 0.4);
+}
+section.list ul:hover li {
+    opacity: 0.4;
+}
+section.list ul:hover li:hover {
+    opacity: 1;
+}
+section.newsletter {
+    max-width: 560px;
+    margin: 20px auto;
+    padding: 0 25px;
+}
+
+@-webkit-keyframes background {
+    0% {
+        color: #7DADFF;
+        background-color: #7DADFF;
+   }
+    14% {
+        color: #F8EA6E;
+        background-color: #F8EA6E;
+   }
+    28% {
+        color: #F9805A;
+        background-color: #F9805A;
+   }
+    42% {
+        color: #12AE51;
+        background-color: #12AE51;
+   }
+    60% {
+        color: #607D8B;
+        background-color: #607D8B;
+   }
+    74% {
+        color: #F44336;
+        background-color: #F44336;
+   }
+    100% {
+        color: #7DADFF;
+        background-color: #7DADFF;
+   }
+}
+
+body.dark {
+    background-color: #000;
+    color: #D8D8D8;
+}
+body.dark a {
+    color: #D8D8D8;
+}
+
+.header-image {
+    width: 40%;
+    /* margin-left: 50%;
+    transform: translateX(-50%); */
+    border-radius:50%;
+    margin-bottom:40px;
+}
+
+.background-cover {
+    content:'';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-color: white;
+    transition: background-image 1s ease-in-out;
+    z-index: -1;
+    transition: opacity 0.6s;
+}
+.background-container {
+    content:'';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    transition: background-image 1s ease-in-out;
+    z-index: -2;
+    transition: opacity 0.6s;
+    overflow: scroll;
+}
+
+.background-gallery-image {
+    width: 100%;
+    height: 100vh;
+    /* width: auto; */
+    object-fit: cover;
+    /* display: inline-block; */
+    opacity: 0;
+    /* transform: scale(0.8); */
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+/* Ensure images fade in when they appear */
+.background-gallery-image.visible {
+    opacity: 1;
+    /* transform: scale(1); */
+}
