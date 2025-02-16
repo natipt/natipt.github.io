@@ -155,7 +155,7 @@ h4 {
 b, strong {
     font-weight: normal;
 }
-button, .button {
+/* button, .button {
     font-family: soleil, sans-serif;
     font-family: 'hkgrotesk', sans-serif;
     font-weight: 400;
@@ -176,7 +176,7 @@ button, .button {
     button, .button {
         font-size: 15px;
    }
-}
+} */
 header:before {
     content: '';
     width: 100%;
@@ -462,7 +462,7 @@ section.list ul .separator .month {
     transform-origin: 0 0;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    background-color: white;
+    /* background-color: white; */
     transition: all 0.2s ease;
     z-index: 1;
 }
@@ -470,13 +470,18 @@ section.list ul .separator .month {
 
 section.list ul .separator .month:after {
     content: '';
-    width: 100px;
+    /* width: 100px; */
     height: 20px;
     position: absolute;
     top: 10px;
     left: 100%;
     background-color: white;
     transition: all 0.2s ease;
+}
+
+.no-backgrounds section.list ul .separator .month:after {
+    background: transparent !important;
+    border-color: transparent !important; /* Optional: makes borders transparent */
 }
 
 section.list ul li {
@@ -493,7 +498,7 @@ section.list ul li.hidden {
 /* the grey line connecting to the date */
 section.list ul li:before {
     content: '';
-    width: calc(100% - 20px);
+    width: calc(100% - 60px);
     height: 1px;
     position: absolute;
     background-color: #000;
@@ -502,6 +507,10 @@ section.list ul li:before {
     left: 20px;
     z-index: 1;
     transition: all 0.2s linear;
+}
+
+.no-backgrounds section.list ul li:before {
+   opacity: 0 !important;
 }
 
 
@@ -557,7 +566,12 @@ section.list ul li a .title h4 {
 section.list ul li a .title h4 span {
     background-color: #fff;
     padding-right: 2px;
+    transition: background-color 1s ease-in;
 }
+.no-backgrounds section.list ul li a .title h4 span {
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+ }
 section.list ul li a .title h4 span:last-of-type {
     padding-right: 8px;
 }
@@ -630,12 +644,16 @@ section.list ul li a .date:after {
     width: 200%;
     height: 100%;
     position: absolute;
-    background-color: #fff;
+    /* background-color: #fff; */
     top: 0;
     left: -8px;
     z-index: 1;
     transition: all 0.2s linear;
 }
+/* .no-backgrounds section.list ul li a .date:after {
+    background-color: transparent;
+    transition: background-color 0.2s linear;
+} */
 
 
 section.list ul li a .date span {
@@ -790,3 +808,55 @@ body.dark a {
     /* transform: scale(1); */
 }
 
+
+/* IMAGE GALLERY */
+
+.flexbox-image-gallery {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    position: fixed;
+    top:0;
+    z-index: -5;
+    overflow: scroll;
+    /* display: none; */
+} 
+.flexbox-image-gallery .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+/* Create four equal columns that sits next to each other */
+.flexbox-image-gallery .column {
+    flex: calc(25% - 16px);
+    max-width: calc(25% - 8px);
+    padding: 0 4px;
+}
+.flexbox-image-gallery .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    opacity: 0;
+    transition: all 0.5s linear;
+    transform: scale(0.8);
+}
+  
+.flexbox-image-gallery .column img.visible {
+    opacity:1;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .flexbox-image-gallery .column {
+        flex: calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+}
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .flexbox-image-gallery .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
