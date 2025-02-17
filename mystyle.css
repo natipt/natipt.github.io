@@ -355,6 +355,8 @@ header .menu.highlight .arrow svg {
 }
 header .menu.highlight .filter {
     opacity: 0;
+    transform: scale(0.9);
+    /* width: 200px; */
 }
 header .menu.highlight .source {
     opacity: 1;
