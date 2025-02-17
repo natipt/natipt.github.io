@@ -355,12 +355,14 @@ header .menu.highlight .arrow svg {
 }
 header .menu.highlight .filter {
     opacity: 0;
-    transform: scale(0.9);
+    /* transform: scale(0.9); */
+    display: none;
     /* width: 200px; */
 }
 header .menu.highlight .source {
     opacity: 1;
     visibility: visible;
+    position: relative;
 }
 header .menu.scroll .arrow {
     padding: 10px 15px 11px 10px;
