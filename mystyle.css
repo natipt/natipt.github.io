@@ -353,6 +353,7 @@ header .menu.highlight .arrow svg {
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
 }
+/* TODO: could animate this a bit nicer with some scaling */
 header .menu.highlight .filter {
     opacity: 0;
     /* transform: scale(0.9); */
