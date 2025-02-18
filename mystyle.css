@@ -11,7 +11,7 @@ body {
 body, html {
     height: 100%;
 }
-::-moz-selection {
+/* ::-moz-selection {
     background-color: #000;
     color: #fff;
     text-shadow: none;
@@ -20,7 +20,7 @@ body, html {
     background-color: #000;
     color: #fff;
     text-shadow: none;
-}
+} */
 a {
     color: #000000;
     text-decoration: none;
@@ -34,6 +34,15 @@ a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
+}
+a.text-link {
+    transition: all 0.2s linear;
+}
+a.text-link:hover {
+    background-color: #ccccff5e;
+    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 a img {
     border: 0;
@@ -408,9 +417,9 @@ section.content h1, section.content h2, section.content h3 {
 section.content p {
     margin-bottom: 10px;
 }
-section.content a {
+/* section.content a {
     text-decoration: underline;
-}
+} */
 section.list {
     max-width: 560px;
     margin: 40px auto 0 auto;
