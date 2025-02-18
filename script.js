@@ -77,5 +77,46 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#see-more-papers span").textContent = "See Less";
         };
     });
+
+
+    // menu highlighting
+    const menuItems = document.querySelectorAll(".menu ul.filter li");
+    const sections = document.querySelectorAll("section.content");
+
+    // Smooth scrolling when clicking a menu item
+    menuItems.forEach(item => {
+        item.addEventListener("click", function () {
+            const targetId = item.getAttribute("data-target");
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust for header height if necessary
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Highlight menu item based on scroll position
+    function updateActiveMenu() {
+        let scrollPosition = window.scrollY + 100; // Offset for accurate detection
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                menuItems.forEach(item => {
+                    item.classList.remove("active");
+                    if (item.getAttribute("data-target") === sectionId) {
+                        item.classList.add("active");
+                    }
+                });
+            }
+        });
+    }
+
+    // Event listener for scrolling
+    window.addEventListener("scroll", updateActiveMenu);
 });
 
