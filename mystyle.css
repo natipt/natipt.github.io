@@ -236,6 +236,7 @@ header .menu .source {
     visibility: hidden;
     z-index: 1;
     transition: all 0.15s ease;
+    transform: scale(0.5);
 }
 header .menu .source span {
     white-space: nowrap;
@@ -356,13 +357,14 @@ header .menu.highlight .arrow svg {
 /* TODO: could animate this a bit nicer with some scaling */
 header .menu.highlight .filter {
     opacity: 0;
-    /* transform: scale(0.9); */
+    /* transform: scale(0.8); */
     display: none;
     /* width: 200px; */
 }
 header .menu.highlight .source {
     opacity: 1;
     visibility: visible;
+    transform: scale(1);
     position: relative;
 }
 header .menu.scroll .arrow {
@@ -864,4 +866,57 @@ body.dark a {
         flex: 100%;
         max-width: 100%;
     }
+}
+
+#papers {
+    max-height: 600px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+#papers.active { 
+    max-height: 2000px;
+    mask-image: linear-gradient(to bottom, black 60%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, black 100%);
+}
+.see-more {
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center !important;
+    position: relative;
+    /* background-color: red; */
+    /* left: 0; */
+    /* top: -50px; */
+    /* display:none; */
+    /* top: 600px; */
+    /* position: absolute; */
+}
+
+/* this is janky */
+.see-more .arrow-down {
+    width: 14px;
+    height: 14px;
+    transform: translateY(2px);
+    transition: all 0.2s linear;
+}
+.see-more.active .arrow-down {
+    transform: translateY(2px) rotate(180deg);
+}
+
+
+.see-more span {
+    transition: all 0.2s linear;
+}
+
+.see-more:hover .arrow-down {
+    transform: translateY(2px) translateX(5px);
+}
+.see-more.active:hover .arrow-down {
+    transform: translateY(2px) rotate(180deg) translateX(-5px);
+}
+.see-more:hover span {
+    padding-right: 5px;
 }

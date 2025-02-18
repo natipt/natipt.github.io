@@ -62,5 +62,20 @@ document.addEventListener("DOMContentLoaded", function() {
             menuspan.innerHTML = "";
         });
     });
+
+    const papers = document.getElementById("papers")
+    const seemorepapers = document.getElementById("see-more-papers")
+    seemorepapers.addEventListener('click', function() {
+        if (papers.classList.contains("active")) {
+            papers.classList.remove("active");
+            seemorepapers.classList.remove("active");
+            document.querySelector("#see-more-papers span").textContent = "See More"
+        }
+        else {
+            papers.classList.add("active");
+            seemorepapers.classList.add("active");
+            document.querySelector("#see-more-papers span").textContent = "See Less";
+        };
+    });
 });
 
