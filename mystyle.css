@@ -130,28 +130,7 @@ h4 {
 b, strong {
     font-weight: normal;
 }
-/* button, .button {
-    font-family: soleil, sans-serif;
-    font-family: 'hkgrotesk', sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 140%;
-    background-color: transparent;
-    display: inline-block;
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid #000;
-    border-radius: 0;
-    padding: 0;
-    -webkit-backface-visibility: hidden;
-    transition: all 0.3s ease;
-}
-@media screen and (max-width: 767px) {
-    button, .button {
-        font-size: 15px;
-   }
-} */
+
 header:before {
     content: '';
     width: 100%;
