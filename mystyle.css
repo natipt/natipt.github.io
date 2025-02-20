@@ -984,3 +984,18 @@ body.dark a {
 .dark-mode .see-more:hover span {
     padding-right: 5px;
 }
+
+.dark-mode header .menu .arrow svg {
+    fill: #d4d4d4; /* Sets the color of the SVG */
+}
+
+.dark-mode header .menu .arrow svg path {
+    stroke: #d4d4d4; /* Ensures stroke color is also #d4d4d4 if needed */
+}
+
+.dark-mode .arrow-down svg {
+    fill: #d4d4d4 !important;
+}
+.dark-mode .arrow-down svg path {
+    stroke: #d4d4d4 !important;
+}
