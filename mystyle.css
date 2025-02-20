@@ -949,6 +949,11 @@ body.dark a {
     opacity: 1;
 }
 
+.dark-mode section.list ul li a:hover, section.list ul li a:active {
+    border: 0;
+    color: #d4d4d4 !important;
+}
+
 .dark-mode .background-cover {
     background-color: #191919;
 }
@@ -993,9 +998,9 @@ body.dark a {
     stroke: #d4d4d4; /* Ensures stroke color is also #d4d4d4 if needed */
 }
 
-.dark-mode .arrow-down svg {
+.dark-mode .see-more .arrow-down svg {
     fill: #d4d4d4 !important;
 }
-.dark-mode .arrow-down svg path {
+.dark-mode .see-more .arrow-down svg path {
     stroke: #d4d4d4 !important;
 }
