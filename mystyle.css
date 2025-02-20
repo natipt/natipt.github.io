@@ -35,7 +35,6 @@ a.text-link:hover {
     padding-left: 2px;
     padding-right: 2px;
 }
-
 a img {
     border: 0;
 }
@@ -130,7 +129,6 @@ h4 {
 b, strong {
     font-weight: normal;
 }
-
 header:before {
     content: '';
     width: 100%;
@@ -872,5 +870,117 @@ body.dark a {
     transform: translateY(2px) rotate(180deg) translateX(-5px);
 }
 .see-more:hover span {
+    padding-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* DARK MODE START */
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #191919;
+    color: #d4d4d4;
+}
+
+.dark-mode a {
+    color: #d4d4d4;
+}
+
+.dark-mode a:hover, .dark-mode a:focus {
+    color: #ffffff;
+}
+
+.dark-mode a.text-link:hover {
+    background-color: rgba(212, 212, 212, 0.3);
+}
+
+.dark-mode body, .dark-mode input, .dark-mode button {
+    color: #d4d4d4;
+}
+
+.dark-mode header:before {
+    background: linear-gradient(-180deg, #191919 0%, rgba(25, 25, 25, 0) 100%);
+}
+
+.dark-mode header:after {
+    background: linear-gradient(0deg, #191919 0%, rgba(25, 25, 25, 0) 100%);
+}
+
+.dark-mode header .menu {
+    background-color: rgba(30, 30, 30, 0.97);
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode section.list ul li:before {
+    background-color: #d4d4d4;
+    opacity: 0.2;
+}
+
+.dark-mode section.list ul li a .title h4 span {
+    background-color: #191919;
+}
+
+.dark-mode section.list ul li a .date:after {
+    background-color: #191919;
+}
+
+.dark-mode section.list ul li a:after {
+    background-color: #191919;
+}
+
+.dark-mode section.list ul:hover .separator h3 {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode section.list ul:hover li {
+    opacity: 0.6;
+}
+
+.dark-mode section.list ul:hover li:hover {
+    opacity: 1;
+}
+
+.dark-mode .background-cover {
+    background-color: #191919;
+}
+
+.dark-mode .background-container {
+    background-color: #191919;
+}
+
+/* Ensure contrast on inputs and buttons */
+.dark-mode input, .dark-mode button {
+    background-color: #252525;
+    border: 1px solid #d4d4d4;
+    color: #d4d4d4;
+}
+
+.dark-mode input::placeholder {
+    color: rgba(212, 212, 212, 0.6);
+}
+
+.dark-mode button:hover {
+    background-color: #303030;
+}
+
+/* Ensure hover effects are visible */
+.dark-mode .see-more:hover .arrow-down {
+    transform: translateY(2px) translateX(5px);
+}
+
+.dark-mode .see-more.active:hover .arrow-down {
+    transform: translateY(2px) rotate(180deg) translateX(-5px);
+}
+
+.dark-mode .see-more:hover span {
     padding-right: 5px;
 }
