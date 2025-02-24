@@ -457,6 +457,20 @@ section.list ul li.hidden {
 /* the grey line connecting to the date */
 section.list ul li:before {
     content: '';
+    width: calc(100% - 20px);
+    height: 1px;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.1;
+    top: 14px;
+    left: 20px;
+    z-index: 1;
+    transition: all 0.2s linear;
+}
+
+section.list ul li:has(.date):before {
+
+    content: '';
     width: calc(100% - 60px);
     height: 1px;
     position: absolute;
