@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday MAB</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      font-family: "Arial Black", sans-serif;
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+      }
+      50% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>HAPPY BIRTHDAY MAB</h1>
+
+  <canvas id="confetti"></canvas>
+
+  <script>
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+
+    const confettiCount = 150;
+    const confettis = [];
+    const colors = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800'];
+
+    for (let i = 0; i < confettiCount; i++) {
+      confettis.push({
+        x: Math.random() * W,
+        y: Math.random() * -H,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * confettiCount,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.random() * 10 - 10,
+        tiltAngle: 0,
+        tiltAngleIncrement: Math.random() * 0.07 + 0.05
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < confettiCount; i++) {
+        let confetti = confettis[i];
+        ctx.beginPath();
+        ctx.lineWidth = confetti.r;
+        ctx.strokeStyle = confetti.color;
+        ctx.moveTo(confetti.x + confetti.tilt + confetti.r / 2, confetti.y);
+        ctx.lineTo(confetti.x + confetti.tilt, confetti.y + confetti.tilt + confetti.r);
+        ctx.stroke();
+      }
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      for (let i = 0; i < confettiCount; i++) {
+        let confetti = confettis[i];
+        confetti.y += Math.cos(confetti.d) + 1 + confetti.r / 2;
+        confetti.tiltAngle += confetti.tiltAngleIncrement;
+        confetti.tilt = Math.sin(confetti.tiltAngle) * 15;
+
+        if (confetti.y > H) {
+          confetti.y = -10;
+          confetti.x = Math.random() * W;
+        }
+      }
+    }
+
+    function loop() {
+      drawConfetti();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+    window.addEventListener('resize', () => {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+    });
+  </script>
+</body>
+</html>
