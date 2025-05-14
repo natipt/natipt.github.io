@@ -37,13 +37,17 @@ document.addEventListener("DOMContentLoaded", function() {
     allItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
             const t = item.getAttribute("data-source");
-            menu.classList.add("highlight");
-            menuspan.innerHTML = t;
-        });
+            if (t) {
+                menu.classList.add("highlight");
+                menuspan.innerHTML = t;
+            }
+        });        
         item.addEventListener("mouseleave", () => {
-            menu.classList.remove("highlight");
-            menuspan.innerHTML = "";
-        });
+            if (menu.classList.contains("highlight")) {
+                menu.classList.remove("highlight");
+                menuspan.innerHTML = "";
+            }
+        });        
     });
 
     const papers = document.getElementById("papers")
