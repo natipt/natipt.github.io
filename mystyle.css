@@ -531,18 +531,12 @@ section.list ul li a .title:has(p) {
    }
 }
 section.list ul li a .title h4 {
-    /* used to be 48 */
     max-width: calc(100% - 48px);
     width: auto;
-    /* height: 40px; */
-    /* inline block lets the line in :before be shown */
     display: inline-block;
     position: relative;
     padding-right: 8px;
-    /* white-space: nowrap; */
     z-index: 3;
-    /* float: left; */
-    /* padding-bottom: 12px; */
 }
 section.list ul li a .title h4 span {
     background-color: #fff;
@@ -561,7 +555,6 @@ section.list ul li a .title h4 span:last-of-type {
 section.list ul li a .title p {
     max-width: calc(100% - 48px);
     opacity: 0.2;
-    /* padding-bottom: -12px; */
 }
 
 /* TODO: check these media */
