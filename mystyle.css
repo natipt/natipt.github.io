@@ -471,6 +471,10 @@ section.list ul li:before {
     z-index: 1;
     transition: all 0.2s linear;
 }
+section.list ul.no-line li:before {
+    display:none;
+    opacity:0;
+}
 
 section.list ul li:has(.date):before {
 
