@@ -27,7 +27,7 @@ a:focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
-a.text-link {
+/* a.text-link {
     transition: all 0.2s linear;
 }
 a.text-link:hover {
@@ -35,7 +35,7 @@ a.text-link:hover {
     border-radius: 10px;
     padding-left: 2px;
     padding-right: 2px;
-}
+} */
 a img {
     border: 0;
 }
@@ -922,9 +922,9 @@ body.dark a {
     color: #ffffff;
 }
 
-.dark-mode a.text-link:hover {
+/* .dark-mode a.text-link:hover {
     background-color: rgba(212, 212, 212, 0.3);
-}
+} */
 
 .dark-mode body, .dark-mode input, .dark-mode button {
     color: #d4d4d4;

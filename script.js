@@ -50,6 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });        
     });
 
+    const otherLinks = document.querySelectorAll(".text-link");
+    otherLinks.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            const t = item.getAttribute("data-source");
+            if (t) {
+                menu.classList.add("highlight");
+                menuspan.innerHTML = t;
+            }
+        });        
+        item.addEventListener("mouseleave", () => {
+            if (menu.classList.contains("highlight")) {
+                menu.classList.remove("highlight");
+                menuspan.innerHTML = "";
+            }
+        });        
+    });
+
     const papers = document.getElementById("papers")
     const seemorepapers = document.getElementById("see-more-papers")
     seemorepapers.addEventListener('click', function() {
