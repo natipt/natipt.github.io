@@ -1,35 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
     const imageGallery = document.querySelector(".flexbox-image-gallery");
-    const listItems = document.querySelectorAll(".hidden-galleries li");
     const body = document.body;
     
-
-    listItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-            console.log(vw)
-            if (vw > 767) {
-                const images = JSON.parse(item.getAttribute("data-images"));
-                body.classList.add("no-backgrounds");
+    // const listItems = document.querySelectorAll(".hidden-galleries li");
+    // listItems.forEach(item => {
+    //     item.addEventListener("mouseenter", () => {
+    //         var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    //         console.log(vw)
+    //         if (vw > 767) {
+    //             const images = JSON.parse(item.getAttribute("data-images"));
+    //             body.classList.add("no-backgrounds");
     
-                images.forEach((imgId, index) => {
-                    const imgElement = document.getElementById(imgId);
-                    imgElement.classList.add("visible");
-                });
-            }
-        });
+    //             images.forEach((imgId, index) => {
+    //                 const imgElement = document.getElementById(imgId);
+    //                 imgElement.classList.add("visible");
+    //             });
+    //         }
+    //     });
 
-        item.addEventListener("mouseleave", () => {
-            // Fade out images
-            const images = document.querySelectorAll(".flexbox-image-gallery .visible");
-            images.forEach((img, index) => {
-                setTimeout(() => {
-                    img.classList.remove("visible"); // Start fade-out
-                }, index * 100);
-            });
-            body.classList.remove("no-backgrounds");
-        });
-    });
+    //     item.addEventListener("mouseleave", () => {
+    //         // Fade out images
+    //         const images = document.querySelectorAll(".flexbox-image-gallery .visible");
+    //         images.forEach((img, index) => {
+    //             setTimeout(() => {
+    //                 img.classList.remove("visible"); // Start fade-out
+    //             }, index * 100);
+    //         });
+    //         body.classList.remove("no-backgrounds");
+    //     });
+    // });
 
     // display data source in menu
     const allItems = document.querySelectorAll(".list ul li");
