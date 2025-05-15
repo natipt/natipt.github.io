@@ -541,11 +541,11 @@ section.list ul li a .title h4 {
 section.list ul li a .title h4 span {
     background-color: #fff;
     padding-right: 2px;
-    transition: background-color 1s ease-in;
+    /* transition: background-color 1s ease-in; */
 }
 .no-backgrounds section.list ul li a .title h4 span {
     background-color: transparent;
-    transition: background-color 0.2s ease-in-out;
+    /* transition: background-color 0.2s ease-in-out; */
  }
 section.list ul li a .title h4 span:last-of-type {
     padding-right: 8px;
@@ -622,7 +622,7 @@ section.list ul li a .date:after {
     top: 0;
     left: -8px;
     z-index: 1;
-    transition: all 0.2s linear;
+    /* transition: all 0.2s linear; */
 }
 /* .no-backgrounds section.list ul li a .date:after {
     background-color: transparent;
