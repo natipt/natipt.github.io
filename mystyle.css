@@ -1109,3 +1109,55 @@ body.dark a {
 
 
 
+.theme-toggle {
+    position:fixed;
+    top:10px;
+    right:10px;
+    z-index:5;
+    height:20px;
+    width:auto;
+}
+.theme-toggle button {
+    /* position:relative;
+    top:0 !important; */
+    background-color:transparent;
+    display: inline-block;
+    /* background-color:red; */
+    border: none;
+    width:20px;
+    height:20px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.theme-toggle button img{
+    display:inline-block;
+    max-height:20px;
+    /* height:100%; */
+    /* width:100%;    */
+    /* background-color:blue;  */
+    padding:0;
+    margin-bottom:0;
+}
+
+.theme-toggle button {
+    opacity: 0.2;
+    transition: opacity 0.2s ease;
+}
+
+body.light-mode #light-mode,
+body.dark-mode #dark-mode {
+    opacity: 1;
+}
+
+.theme-toggle button:hover {
+    opacity: 0.8;   
+}
+
+.theme-toggle button:hover {
+    background: transparent;
+}
+
+/* Invert color in dark mode */
+body.dark-mode .theme-toggle img {
+    filter: invert(1);
+  }

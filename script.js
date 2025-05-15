@@ -122,5 +122,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for scrolling
     window.addEventListener("scroll", updateActiveMenu);
+
+    // Theme toggle
+    const lightBtn = document.getElementById("light-mode");
+  const darkBtn = document.getElementById("dark-mode");
+
+  function setTheme(mode) {
+    if (mode === "dark") {
+      body.classList.add("dark-mode");
+      body.classList.remove("light-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.add("light-mode");
+      body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Check saved theme
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
+
+  // Toggle listeners
+  lightBtn.addEventListener("click", () => setTheme("light"));
+  darkBtn.addEventListener("click", () => setTheme("dark"));
 });
 
