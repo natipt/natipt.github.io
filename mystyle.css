@@ -174,11 +174,13 @@ header .menu {
 }
 header .menu:before {
     content: '';
-    width: calc(100% + 200px);
+    /* width: calc(100% + 200px);
     height: calc(100% + 65px);
     position: absolute;
     top: -15px;
-    left: -100px;
+    left: -100px; */
+    position:absolute;
+    width:100%;
 }
 header .menu .source {
     position: absolute;
