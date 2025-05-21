@@ -556,7 +556,8 @@ section.list ul li a .title h4 span:last-of-type {
 
 section.list ul li a .title p {
     max-width: calc(100% - 48px);
-    opacity: 0.2;
+    /* opacity: 0.2; */
+    opacity:0.3;
 }
 
 /* TODO: check these media */
@@ -1159,3 +1160,58 @@ body.dark-mode #dark-mode {
 body.dark-mode .theme-toggle img {
     filter: invert(1);
   }
+
+.card-gallery .card a {
+    /* background-color:red; */
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+.card-gallery .card a .title h4 {
+    font-weight: 700;
+}
+.card-gallery .card a .title p {
+    margin-bottom: 0;
+}
+.card-gallery .card a .title h4 .tag{
+    transsform:translateY(-10px);
+}
+/* .card-gallery .card:before {
+    opacity:0;
+    height:100%;
+    content:'';
+    background-color:black;
+    width:2px;
+    position:absolute;
+    left:0;
+    top:0;
+    transform:translateX(-10px);
+    transition: opacity 0.5s ease;
+}
+.card-gallry .card a:hover:before {
+    opacity: 1;
+} */
+
+/* with a subtitle the padding looks too spaced */
+/* section.list ul li a .title:has(p) {
+    padding-bottom: 0px;
+} */
+
+
+.scroll-reveal {
+    transition: transform 0.75s, opacity 0.75s;
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  .scroll-reveal.active{
+      transform: translateY(0);
+      opacity: 1;
+  }
+  
+.light-mode .visible-light, .dark-mode .visible-dark {
+    display: block;
+}
+.light-mode .visible-dark, .dark-mode .visible-light {
+    display: none;
+}
