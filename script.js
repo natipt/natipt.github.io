@@ -242,6 +242,11 @@
 // //     });
 // // });
 
+// == Refresh page: start at top of page ==
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  
 // === Animation functions ===
 
 function easeOutCubic(t) {
@@ -310,17 +315,17 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#see-more-papers span").textContent =
             papers.classList.contains("active") ? "See Less" : "See More";
 
-        requestAnimationFrame(() => {
-            // Add .scroll-reveal to newly visible items
-            document.querySelectorAll('#papers li:not([data-revealed])').forEach(el => {
-                el.classList.add('scroll-reveal');
-            });
+        // requestAnimationFrame(() => {
+        //     // Add .scroll-reveal to newly visible items
+        //     document.querySelectorAll('#papers li:not([data-revealed])').forEach(el => {
+        //         el.classList.add('scroll-reveal');
+        //     });
 
-            scrollTriggerJS('.scroll-reveal', {
-                rootMargin: '0px',
-                threshold: 0.1
-            });
-        });
+        //     scrollTriggerJS('.scroll-reveal', {
+        //         rootMargin: '0px',
+        //         threshold: 0.1
+        //     });
+        // });
     });
 
     // Hover source (papers, news, etc.)

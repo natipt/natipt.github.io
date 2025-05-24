@@ -1041,7 +1041,13 @@ body.dark a {
     stroke: #d4d4d4 !important;
 }
 
-
+.dark-mode section.list ul:hover li {
+    opacity: 0.4 !important; /* why did i need important here? what am i overriding */
+  }
+  
+  .dark-mode section.list ul:hover li:hover {
+    opacity: 1 !important;
+  }
 
 /* header image on small sites */
 @media (max-width: 600px) {
