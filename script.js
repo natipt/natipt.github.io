@@ -49,6 +49,26 @@ function scrollTriggerJS(selector, options = {}) {
     els.forEach(el => observer.observe(el));
 }
 
+// === Dynamically set paper section height ==
+function setCollapsedPapersHeight() {
+    const container = document.getElementById("papers");
+    const cutoff = container.querySelector('[data-cutoff]');
+    if (!container || !cutoff) return;
+  
+    const containerTop = container.getBoundingClientRect().top + window.scrollY;
+    const cutoffTop = cutoff.getBoundingClientRect().top + window.scrollY;
+  
+    const height = cutoffTop - containerTop;
+    container.style.setProperty('--collapsed-height', `${height}px`);
+  }
+  
+window.addEventListener("resize", () => {
+    const papers = document.getElementById("papers");
+    if (papers?.dataset.collapsed === "true") {
+        setCollapsedPapersHeight();
+    }
+});
+
 
 // === DOM Ready ===
 
@@ -60,28 +80,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("menu");
     const menuspan = menu.querySelector(".source span");
 
+    setCollapsedPapersHeight();
+
     // Trigger initial scroll reveals
     scrollTriggerJS('.scroll-reveal', { rootMargin: '0px', threshold: 0.1 });
 
     // Handle "See More"
     seemorepapers.addEventListener("click", () => {
-        papers.classList.toggle("active");
+        const expanded = papers.classList.toggle("active");
+        if (expanded) {
+            papers.style.maxHeight = "2000px";
+        } else {
+            // collapse to computer height variable
+            papers.style.maxHeight = getComputedStyle(papers).getPropertyValue('--collapsed-height');
+        }
         seemorepapers.classList.toggle("active");
 
         document.querySelector("#see-more-papers span").textContent =
             papers.classList.contains("active") ? "See Less" : "See More";
-
-        // requestAnimationFrame(() => {
-        //     // Add .scroll-reveal to newly visible items
-        //     document.querySelectorAll('#papers li:not([data-revealed])').forEach(el => {
-        //         el.classList.add('scroll-reveal');
-        //     });
-
-        //     scrollTriggerJS('.scroll-reveal', {
-        //         rootMargin: '0px',
-        //         threshold: 0.1
-        //     });
-        // });
     });
 
     // Hover source (papers, news, etc.)

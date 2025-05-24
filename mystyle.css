@@ -854,7 +854,8 @@ body.dark a {
 }
 
 #papers {
-    max-height: 600px;
+    --collapsed-height: 600px;
+    max-height: var(--collapsed-height);
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
@@ -865,6 +866,8 @@ body.dark a {
     max-height: 2000px;
     mask-image: linear-gradient(to bottom, black 60%, black 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, black 100%);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
 }
 .see-more {
     bottom: 0;
