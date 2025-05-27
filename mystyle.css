@@ -693,10 +693,10 @@ section.list ul:hover .separator h3 {
     color: rgba(0, 0, 0, 0.4);
 }
 section.list ul:hover li {
-    opacity: 0.4;
+    opacity: 0.4 !important;
 }
 section.list ul:hover li:hover {
-    opacity: 1;
+    opacity: 1 !important;
 }
 section.newsletter {
     max-width: 560px;
