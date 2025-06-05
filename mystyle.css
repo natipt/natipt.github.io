@@ -1066,6 +1066,10 @@ body.dark a {
     opacity: 1 !important;
   }
 
+.dark-mode .category {
+    background-color: #ccccff !important;
+}
+
 /* header image on small sites */
 @media (max-width: 600px) {
     .header-image {
