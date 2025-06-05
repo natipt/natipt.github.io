@@ -1,0 +1,3 @@
+[submodule "src/threejs"]
+	path = src/threejs
+	url = https://github.com/natipt/milnor-shaders.git
