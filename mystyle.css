@@ -46,14 +46,14 @@ a.text-link:hover {
     padding-left: 2px;
     padding-right: 2px;
 } */
-a img {
+a img, a video {
     border: 0;
 }
 p {
     margin: 0;
 }
 img, svg, video {
-    width: 100%;
+    width: 100% !important;
     height: auto;
     max-width: 100%;
 }
