@@ -1243,3 +1243,13 @@ body.dark-mode .theme-toggle img {
 .light-mode .visible-dark, .dark-mode .visible-light {
     display: none;
 }
+
+.lavender-highlight {
+    font-weight:700;
+}
+.light-mode .lavender-highlight {
+    color: #9898c1;
+}
+.dark-mode .lavender-highlight {
+    color: #ccccff;
+}
