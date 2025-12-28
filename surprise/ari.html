@@ -149,6 +149,14 @@
         0 2px 0 #8b0000,
         0 8px 16px rgba(0,0,0,0.45);
     }
+    .btn.blocked {
+        transform: translateX(-50%) translateY(8px) !important;
+        box-shadow:
+            0 2px 0 #393939,
+            0 8px 16px rgba(0,0,0,0.45) !important;
+        background: #454545 !important;
+        color: #aaaaaa !important;
+    }
 
     /* Confetti canvas on top, click-through */
     canvas#confetti {
@@ -290,7 +298,7 @@
 
     <button id="go" class="btn">Initiate Deadlift Sequence</button>
     <canvas id="confetti"></canvas>
-    <audio id="tadah" src="tadah.mp3" preload="auto"></audio>
+    <audio id="tadah" src="fanfareff1.mp3" preload="auto"></audio>
   </section>
 
   <script>
@@ -313,9 +321,12 @@
     });
 
     btn.addEventListener('click', () => {
-      vid.pause();
-      vid.currentTime = 0;
-      vid.play();
+        tada.pause();
+        tada.currentTime = 0;
+
+        vid.pause();
+        vid.currentTime = 0;
+        vid.play();
     });
 
     // Confetti (based on your tilt/line style)
@@ -384,7 +395,7 @@
 
       // Play tadah sound with confetti
       try {
-        tada.currentTime = 0;
+        tada.currentTime = 0.5;
         tada.play();
       } catch (e) {
         // ignore if blocked; usually allowed because user clicked earlier
