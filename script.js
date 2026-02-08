@@ -70,6 +70,7 @@ window.addEventListener("resize", () => {
 });
 
 
+
 // === DOM Ready ===
 
 document.addEventListener("DOMContentLoaded", function () {
