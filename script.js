@@ -76,6 +76,22 @@ window.addEventListener("resize", () => {
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
 
+    // Theme toggle
+    const lightBtn = document.getElementById("light-mode");
+    const darkBtn = document.getElementById("dark-mode");
+
+    function setTheme(mode) {
+        body.classList.toggle("dark-mode", mode === "dark");
+        body.classList.toggle("light-mode", mode === "light");
+        localStorage.setItem("theme", mode);
+    }
+
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    lightBtn.addEventListener("click", () => setTheme("light"));
+    darkBtn.addEventListener("click", () => setTheme("dark"));
+
     const papers = document.getElementById("papers");
     const seemorepapers = document.getElementById("see-more-papers");
     const menu = document.getElementById("menu");
@@ -170,19 +186,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", updateActiveMenu);
 
-    // Theme toggle
-    const lightBtn = document.getElementById("light-mode");
-    const darkBtn = document.getElementById("dark-mode");
-
-    function setTheme(mode) {
-        body.classList.toggle("dark-mode", mode === "dark");
-        body.classList.toggle("light-mode", mode === "light");
-        localStorage.setItem("theme", mode);
-    }
-
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-
-    lightBtn.addEventListener("click", () => setTheme("light"));
-    darkBtn.addEventListener("click", () => setTheme("dark"));
+    
 });

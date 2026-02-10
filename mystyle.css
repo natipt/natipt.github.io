@@ -1303,12 +1303,81 @@ body.dark-mode .theme-toggle img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 14px;
+    /* border-radius: 14px; */
   }
   
-  /* Optional: subtle hover */
-  .photo-item img:hover {
-    transform: translateY(-2px);
-    transition: transform 0.15s ease;
+  /* .photo-gallery:hover .photo-item {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
   }
   
+  .photo-gallery .photo-item:hover {
+    opacity: 1;
+  } */
+
+  .photo-item-caption {
+    font-size: 14px;
+    color: #929292;
+    font-style:italic;
+    line-height: 14px;
+    margin-top:4px;
+  }
+
+  /* ===== Photos page: spacing + width overrides ===== */
+
+/* kill the 25vh top margin from section.content */
+section.content.photos-header {
+    max-width: 1100px;       /* wider header too */
+    margin: 70px auto 10px;  /* smaller top gap */
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 767px) {
+    section.content.photos-header {
+      margin: 40px auto 10px;
+    }
+  }
+  
+  /* tighten title -> gallery spacing */
+  section.content.photos-header h1 {
+    margin-bottom: 6px;
+  }
+  section.content.photos-header p {
+    margin-bottom: 0;
+  }
+  
+  /* make the gallery section wide and close to header */
+  section.content.photos-page {
+    max-width: 1100px;
+    margin: 18px auto 40px; /* small space above photos */
+    padding: 0 20px;
+  }
+  
+  /* masonry-like columns */
+  section.content.photos-page .photo-gallery {
+    column-count: 3;
+    column-gap: 16px;
+  }
+  
+  @media (max-width: 1000px) {
+    section.content.photos-page .photo-gallery { column-count: 2; }
+  }
+  @media (max-width: 600px) {
+    section.content.photos-page .photo-gallery { column-count: 1; }
+  }
+  
+  /* section.content.photos-page .photo-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin: 0 0 16px 0;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  section.content.photos-page .photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* border-radius: 14px; */
+  }
+   */
